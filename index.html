@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            text-align: center;
+            background-color: darkcyan;
+            color:lightcyan;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+        }
+        button{
+            border-radius: 10px;
+            background-color: lightcyan;
+            margin: 1em 2em;
+        }
+    </style>
+</head>
+<body>
+    <p id="para">čas je </p>
+    <button onclick="time()">Stlač ma!</button>
+    <script>
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        function time() {
+            var date = new Date();
+            var hh = date.getHours();
+            var mm = date.getMinutes();
+            var ss = date.getSeconds();
+            
+            // adding 0 for single digits
+            
+            mm = checkTime(mm);
+            ss = checkTime(ss);
+            document.getElementById('para').innerHTML ="čas je " + hh + ":" + mm + ":" + ss;
+        }
+    </script>
+</body>
+</html>
