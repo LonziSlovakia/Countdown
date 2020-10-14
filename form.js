@@ -1,0 +1,3 @@
+function LoggedIn(){
+    return true;
+}
